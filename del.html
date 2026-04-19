@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Two Numbers</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    input,
+    button {
+      padding: 10px;
+      margin: 10px 0;
+      width: 200px;
+      font-size: 16px;
+    }
+
+    #result {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Add Two Numbers</h1>
+  <form onsubmit="return false;">
+    <!-- Input fields -->
+    <input type="text" id="num1" placeholder="Enter first number"><br>
+    <input type="text" id="num2" placeholder="Enter second number"><br>
+    <!-- Button to trigger addition -->
+    <button type="button" onclick="addNumbers()">Add</button>
+  </form>
+  <!-- Result display -->
+  <div id="result"></div>
+
+  <script>
+    function addNumbers() {
+      // Get input values and parse them as integers
+      const num1 = parseInt(document.getElementById('num1').value);
+      const num2 = parseInt(document.getElementById('num2').value);
+
+      // Validate inputs
+      if (isNaN(num1) || isNaN(num2)) {
+        document.getElementById('result').textContent = 'Please enter valid numbers.';
+        return;
+      }
+
+      // Perform addition
+      const sum = num1 + num2;
+
+      // Display result
+      document.getElementById('result').textContent = `The sum is: ${sum}`;
+    }
+  </script>
+</body>
+
+</html>
